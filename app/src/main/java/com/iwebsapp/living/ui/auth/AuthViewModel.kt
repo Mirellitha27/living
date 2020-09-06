@@ -1,4 +1,6 @@
 package com.iwebsapp.living.ui.auth
 
-class AuthViewModel {
+import androidx.lifecycle.ViewModel
+
+class AuthViewModel : ViewModel() {
 }
