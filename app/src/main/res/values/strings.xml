@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Living</string>
+
+    <string name="phone">Número telefonico</string>
+    <string name="password">Contraseña</string>
+    <string name="not_registered">¿No estás registrado?</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="create_account">Crea tu cuenta</string>
+    <string name="forgot_password">Olvidé mi contraseña</string>
 </resources>
