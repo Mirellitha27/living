@@ -7,4 +7,9 @@
     <string name="login">Iniciar sesión</string>
     <string name="create_account">Crea tu cuenta</string>
     <string name="forgot_password">Olvidé mi contraseña</string>
+    <string name="copyright">Copyright © 2020 iwebsapp. All rights reserved.</string>
+    <string name="name">Nombre completo</string>
+    <string name="have_account">¿Ya tienes una cuenta?</string>
+
+    <string name="continuer">Continuar</string>
 </resources>

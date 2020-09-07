@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_big"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="@dimen/space_big"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_big"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/space_min"
             android:layout_marginEnd="@dimen/space_big"
             app:cardCornerRadius="@dimen/space_small"
             app:cardElevation="@dimen/space_small"
@@ -99,7 +99,6 @@
                     android:layout_marginTop="@dimen/space_avg"
                     android:layout_marginEnd="@dimen/space_avg"
                     android:background="@drawable/btn_rounder"
-                    android:backgroundTint="@color/background"
                     android:hint="@string/phone"
                     android:inputType="phone"
                     android:padding="@dimen/space_small"
@@ -115,7 +114,6 @@
                     android:layout_marginTop="@dimen/space_small"
                     android:layout_marginEnd="@dimen/space_avg"
                     android:background="@drawable/btn_rounder"
-                    android:backgroundTint="@color/background"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:padding="@dimen/space_small"
@@ -174,6 +172,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
+
+        <TextView
+            style="@style/subTitle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_avg"
+            android:text="@string/copyright"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
