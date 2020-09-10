@@ -1,8 +1,15 @@
 package com.iwebsapp.living.data.db
 
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.iwebsapp.living.data.db.entities.Token
+
+@Database(
+    entities = [Token::class],
+    version = 1
+)
 
 abstract class AppDatabase : RoomDatabase() {
 

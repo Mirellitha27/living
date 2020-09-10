@@ -17,10 +17,27 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions("environment")
+    productFlavors {
+        demo {
+            dimension "environment"
+            buildConfigField("String", "BASE_URL", "\"https://api.dev.goliving.live/v1/\"")
+        }
+        full {
+            dimension "environment"
+            buildConfigField("String", "BASE_URL", "\"https://api.goliving.live/v1/\"")
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
         }
     }
 

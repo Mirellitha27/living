@@ -11,6 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.auth.LoginActivity">
@@ -92,6 +93,7 @@
 
                 <EditText
                     android:id="@+id/txtPhone"
+                    android:text="@={viewmodel.phone}"
                     style="@style/description"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -107,6 +109,7 @@
 
                 <EditText
                     android:id="@+id/txtPassword"
+                    android:text="@={viewmodel.password}"
                     style="@style/description"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -121,6 +124,7 @@
 
                 <TextView
                     android:id="@+id/btnLogin"
+                    android:onClick="@{viewmodel::onLoginButtonClick}"
                     style="@style/title"
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -174,15 +178,27 @@
             app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
 
         <TextView
+            android:id="@+id/textView2"
             style="@style/subTitle"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/space_avg"
+            android:gravity="center"
             android:text="@string/copyright"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
