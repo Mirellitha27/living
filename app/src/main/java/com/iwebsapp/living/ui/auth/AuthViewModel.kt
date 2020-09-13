@@ -1,5 +1,6 @@
 package com.iwebsapp.living.ui.auth
 
+import android.view.View
 import androidx.lifecycle.ViewModel
 import com.iwebsapp.living.data.repositories.UserRepository
 import com.iwebsapp.living.util.ApiException
@@ -12,7 +13,7 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
 
     var authListener: AuthListener? = null
 
-    fun onLoginButtonClick() {
+    fun onLoginButtonClick(view: View)  {
         authListener?.onStarted()
         if (phone.isNullOrEmpty() || password.isNullOrEmpty()) {
             authListener?.onFailure("Telefono o contraseña invalidos")

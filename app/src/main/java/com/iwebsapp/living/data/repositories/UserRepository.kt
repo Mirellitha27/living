@@ -10,4 +10,9 @@ class UserRepository(private val api: MyApi, private val db: AppDatabase) : Safe
     suspend fun userLoginLiving(phone: String, password: String): AuthResponse {
         return apiRequest { api.loginliving(phone, password) }
     }
+
+    //suspend fun saveToken(data: String) = db.getTokenDao().upsert(data)
+
+    //fun getToken() = db.getTokenDao().getToken()
+
 }

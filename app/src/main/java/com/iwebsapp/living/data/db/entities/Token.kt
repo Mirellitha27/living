@@ -10,5 +10,5 @@ data class Token(
     var data: String? = null
 ){
     @PrimaryKey(autoGenerate = false)
-    var token: Int = CURRENT_TOKEN_ID
+    var uid: Int = CURRENT_TOKEN_ID
 }
