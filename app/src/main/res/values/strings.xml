@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Living</string>
     <string name="welcome_app">Bienvenido Living</string>
+    <string name="zero">0</string>
+
     <string name="phone">Número telefonico</string>
     <string name="password">Contraseña</string>
     <string name="not_registered">¿No estás registrado?</string>
@@ -10,9 +12,16 @@
     <string name="copyright">Copyright © 2020 iwebsapp. All rights reserved.</string>
     <string name="name">Nombre completo</string>
     <string name="have_account">¿Ya tienes una cuenta?</string>
+    <string name="affair">Asunto:</string>
+    <string name="solution">Solución</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="me_gusta">Me gusta - </string>
+    <string name="visits">Visitas</string>
+    <string name="comments">Comentarios</string>
+    <string name="like">Me gusta</string>
 
     <string name="continuer">Continuar</string>
-    <string name="title_activity_main">ScrollingActivity</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

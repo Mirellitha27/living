@@ -16,7 +16,6 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".ui.home.MainActivity"
-            android:label="Bienvenido living"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
