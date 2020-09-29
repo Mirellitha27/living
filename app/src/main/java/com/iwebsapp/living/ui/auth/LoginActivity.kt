@@ -4,15 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.iwebsapp.living.MainActivity
 import com.iwebsapp.living.R
 import com.iwebsapp.living.data.db.AppDatabase
 import com.iwebsapp.living.data.network.MyApi
 import com.iwebsapp.living.data.network.NetworkConnectionInterceptor
 import com.iwebsapp.living.data.repositories.UserRepository
 import com.iwebsapp.living.databinding.ActivityLoginBinding
+import com.iwebsapp.living.ui.home.MainActivity
 import com.iwebsapp.living.util.hide
 import com.iwebsapp.living.util.show
 import com.iwebsapp.living.util.snackbar
