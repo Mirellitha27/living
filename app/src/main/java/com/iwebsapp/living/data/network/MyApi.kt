@@ -2,14 +2,12 @@ package com.iwebsapp.living.data.network
 
 import com.iwebsapp.living.BuildConfig
 import com.iwebsapp.living.data.network.responses.AuthResponse
+import com.iwebsapp.living.data.network.responses.ServiceResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface MyApi {
 
@@ -20,6 +18,18 @@ interface MyApi {
         @Field("phone") phone: String,
         @Field("password") password: String
     ): Response<AuthResponse>
+
+    // @GET("service/all/{idSub}")
+    //    Call<ServicesModel> getServices(
+    //            @Path("idSub") String idSub,
+    //            @Header("Authorization") String authHeader
+    //    )
+
+    @GET("service/all/{idSub}")
+    suspend fun getServices(
+        @Path("idSub") idSub: String,
+        @Header("Authorization") authHeader: String
+    ) : Response<ServiceResponse>
 
     companion object{
         operator fun invoke(
