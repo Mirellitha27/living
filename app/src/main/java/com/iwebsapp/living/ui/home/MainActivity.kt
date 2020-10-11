@@ -88,11 +88,11 @@ class MainActivity : AppCompatActivity(), KodeinAware {
             addAll(serviceItem)
         }
 
-        recyclerview.apply {
+        /*recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = mAdapter
-        }
+        }*/
     }
 
     private fun List<Services>.toServiceItem() : List<ServicesItem> {

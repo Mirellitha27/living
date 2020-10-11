@@ -6,28 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.home.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".ui.home.MainScrollingActivity"
+    tools:showIn="@layout/activity_main_scrolling">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            tools:listitem="@layout/item_services"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <!--android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_post"/>
-
-    </LinearLayout>
+   <FrameLayout
+       android:id="@+id/contentFrame"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
 
 </androidx.core.widget.NestedScrollView>

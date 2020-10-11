@@ -15,17 +15,24 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ui.home.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".ui.home.MainScrollingActivity"
+            android:label="@string/title_activity_main_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ui.auth.LoginActivity">
 
         </activity>
+
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".ui.auth.LoginActivity" />
         <activity android:name=".ui.auth.SignUpActivity" />
     </application>
 
