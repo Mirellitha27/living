@@ -1,12 +1,13 @@
-package com.iwebsapp.living.ui.home
+package com.iwebsapp.living.ui
 
 import android.os.Bundle
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.iwebsapp.living.R
+import com.iwebsapp.living.ui.home.HomeFragment
+
 
 class MainScrollingActivity : AppCompatActivity() {
 
@@ -16,6 +17,7 @@ class MainScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = title
+
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
@@ -23,9 +25,6 @@ class MainScrollingActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             callMainFragment()
-            //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-            //binding.setViewModel(viewModel)
-            //binding.setLifecycleOwner(this)
         }
     }
 

@@ -1,14 +1,31 @@
 package com.iwebsapp.living.ui.home
 
+import android.content.pm.ServiceInfo
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iwebsapp.living.R
+import com.iwebsapp.living.data.db.entities.Services
+import com.iwebsapp.living.util.Coroutines
+import com.iwebsapp.living.util.hide
+import com.iwebsapp.living.util.show
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.home_fragment.*
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.kodein
+import org.kodein.di.generic.instance
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), KodeinAware {
+
+    override val kodein by kodein()
+    private val factory: HomeViewModelFactory by instance()
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -16,17 +33,40 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
+        bindUI()
+    }
+
+    private fun bindUI() = Coroutines.main {
+        progress_bar.show()
+        viewModel.services.await().observe(viewLifecycleOwner, Observer {
+            progress_bar.hide()
+            initRecyclerView(it.toServiceItem())
+        })
+    }
+
+    private fun initRecyclerView(serviceItem: List<ServicesItem>) {
+        val mAdapter = GroupAdapter<ViewHolder>().apply {
+            addAll(serviceItem)
+        }
+
+        recyclerview.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = mAdapter
+        }
+    }
+
+    private fun List<Services>.toServiceItem() : List<ServicesItem> {
+        return this.map {
+            ServicesItem(it)
+        }
     }
 
 }

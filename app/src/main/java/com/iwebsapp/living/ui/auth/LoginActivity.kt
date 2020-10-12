@@ -11,7 +11,7 @@ import com.iwebsapp.living.data.network.MyApi
 import com.iwebsapp.living.data.network.NetworkConnectionInterceptor
 import com.iwebsapp.living.data.repositories.UserRepository
 import com.iwebsapp.living.databinding.ActivityLoginBinding
-import com.iwebsapp.living.ui.home.MainActivity
+import com.iwebsapp.living.ui.MainScrollingActivity
 import com.iwebsapp.living.util.hide
 import com.iwebsapp.living.util.show
 import com.iwebsapp.living.util.snackbar
@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
     }
 
     override fun onMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainScrollingActivity::class.java)
         startActivity(intent)
     }
 
