@@ -1,5 +1,6 @@
 package com.iwebsapp.living.data.repositories
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.iwebsapp.living.data.db.AppDatabase
@@ -42,7 +43,9 @@ class ServicesRepository(
 
         if (lastSaveAt == null || isFetchNeeded(LocalDateTime.parse(lastSaveAt))) {
             try {
-                val response = apiRequest { api.getServices("", "") }
+                //5f129238c759070794bdbef3
+                val response = apiRequest { api.getServices( "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50Ijp7Il9pZCI6IjVmMjRhMzcyODc0NzRhMjZlZTBjMWEyNCIsInJvbCI6IlNldHRsZXIifSwiaWF0IjoxNjAyNDc2MDEzfQ.fkxqpr90SCmeP-j8avTvUmlcpy7GrDG9SgPfiX0DuL0") }
+                Log.d("ServicesRepository", "data: " + response.data)
                 services.postValue(response.data)
             } catch (e: Exception) {
                 e.printStackTrace()

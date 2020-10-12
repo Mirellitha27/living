@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Services (
     @PrimaryKey(autoGenerate = false)
-    val id: String,
+    val _id: String,
     val name: String,
     val image: String
     )

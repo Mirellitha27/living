@@ -25,9 +25,8 @@ interface MyApi {
     //            @Header("Authorization") String authHeader
     //    )
 
-    @GET("service/all/{idSub}")
+    @GET("service/list/all")
     suspend fun getServices(
-        @Path("idSub") idSub: String,
         @Header("Authorization") authHeader: String
     ) : Response<ServiceResponse>
 
